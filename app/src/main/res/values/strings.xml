@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">easy-retrofit</string>
+    <string name="error_http_server">Erro %d do servidor</string>
+    <string name="fire_request">Fire request!</string>
 </resources>

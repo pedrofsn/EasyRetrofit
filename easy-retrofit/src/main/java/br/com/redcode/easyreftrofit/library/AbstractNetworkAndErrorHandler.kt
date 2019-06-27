@@ -32,7 +32,7 @@ abstract class AbstractNetworkAndErrorHandler {
 
     private fun onNetworkHttpError(httpException: HttpException) {
         val networkError = httpException.code()
-        val errorBody = httpException.response().errorBody()?.string()
+        val errorBody = httpException.response()?.errorBody()?.string()
         errorBody?.let { handleErrorJSONWithStatusCodeHTTP(it, networkError) }
     }
 

@@ -38,16 +38,22 @@ suspend fun <TypePayload : Payload<TypeModel>, TypeModel> Deferred<TypePayload>.
     } catch (e: Exception) {
         if (e is HttpException) {
             val code = e.code()
-            val errorBody = e.response().errorBody()?.string()
+            val errorBody = e.response()?.errorBody()?.string()
 
             when {
-                handleErrorManual == null && errorBody != null -> NetworkAndErrorHandler(
-                    callbackNetworkRequest
-                ).handleErrorJSONWithStatusCodeHTTP(errorBody, code)
+                handleErrorManual == null && errorBody != null -> {
+                    NetworkAndErrorHandler(
+                        callbackNetworkRequest
+                    ).handleErrorJSONWithStatusCodeHTTP(errorBody, code)
+                }
 
-                handleErrorManual != null -> handleErrorManual.invoke(errorBody)
+                handleErrorManual != null -> {
+                    handleErrorManual.invoke(errorBody)
+                }
 
-                handleFailureManual != null -> handleFailureManual.invoke(e)
+                handleFailureManual != null -> {
+                    handleFailureManual.invoke(e)
+                }
 
                 else -> {
                     NetworkAndErrorHandler(callbackNetworkRequest).handle(e)

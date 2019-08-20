@@ -9,7 +9,6 @@ import br.com.redcode.easyreftrofit.sample.rest.abstracts.BaseInteractor
 import br.com.redcode.easyreftrofit.sample.rest.abstracts.NetworkAndErrorHandler
 import br.com.redcode.easyreftrofit.sample.rest.common.API
 import br.com.redcode.easyreftrofit.sample.rest.common.APIConnection
-import kotlinx.coroutines.Deferred
 import retrofit2.HttpException
 import java.net.UnknownHostException
 
@@ -26,14 +25,13 @@ fun PayloadError.toModel(networkError: Int) = ErrorHandled(
     id = extract safe id
 )
 
-suspend fun <TypePayload : Payload<TypeModel>, TypeModel> Deferred<TypePayload>.doRequest(
+suspend fun <TypePayload : Payload<TypeModel>, TypeModel> TypePayload.doRequest(
     callbackNetworkRequest: CallbackNetworkRequest? = null,
     handleErrorManual: ((String?) -> Unit)? = null,
     handleFailureManual: ((Throwable) -> Unit)? = null
 ): TypeModel? {
     return try {
-        val result = await()
-        val model = result.toModel()
+        val model = toModel()
         model
     } catch (e: Exception) {
         if (e is HttpException) {

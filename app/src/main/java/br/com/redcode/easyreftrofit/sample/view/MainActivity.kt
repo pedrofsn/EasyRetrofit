@@ -35,11 +35,12 @@ class MainActivity : CustomActivity() {
             val asyncDog = async(io()) { interactor.receiveRemovals() }
             val dog = asyncDog.await()
 
-            if (dog != null) {
-                showMessage(dog.status)
-                setupTextView(dog)
-            } else {
-                textView.text = "Shit happens"
+            when {
+                dog != null -> {
+                    showMessage(dog.status)
+                    setupTextView(dog)
+                }
+                else -> textView.text = "Shit happens"
             }
 
             hideProgress()

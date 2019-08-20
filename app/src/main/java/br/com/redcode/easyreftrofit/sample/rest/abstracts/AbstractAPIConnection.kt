@@ -1,7 +1,6 @@
 package br.com.redcode.easyreftrofit.sample.rest.abstracts
 
 import br.com.redcode.easyreftrofit.library.APIConnection
-import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -29,13 +28,12 @@ abstract class AbstractAPIConnection<T>(
         logging.level = if (showLogs) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
         okHttppBuilder.addInterceptor(logging)
 
-        val apiConnection: APIConnection = APIConnection(
+        val apiConnection = APIConnection(
                 apiBaseURL = baseURL,
                 okHttppBuilder = okHttppBuilder,
                 defaultConverterFactory = moshi
         )
 
-        apiConnection.buiderRetrofit.addCallAdapterFactory(CoroutineCallAdapterFactory())
         val retrofit = apiConnection.createRetrofit()
 
         return@lazy retrofit.create(classz)

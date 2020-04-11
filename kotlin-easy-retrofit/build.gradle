@@ -1,5 +1,10 @@
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.github.pedrofsn'
+sourceCompatibility = "8"
+targetCompatibility = "8"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -7,6 +12,3 @@ dependencies {
     api 'com.squareup.okhttp3:logging-interceptor:4.3.1'
     api 'com.squareup.retrofit2:retrofit:2.7.2'
 }
-
-sourceCompatibility = "8"
-targetCompatibility = "8"

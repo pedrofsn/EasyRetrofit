@@ -3,8 +3,6 @@ apply plugin: 'kotlin'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'com.github.pedrofsn'
-sourceCompatibility = "8"
-targetCompatibility = "8"
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])

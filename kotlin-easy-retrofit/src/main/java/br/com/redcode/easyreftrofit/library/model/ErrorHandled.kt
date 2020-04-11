@@ -1,4 +1,4 @@
-package br.com.redcode.retrofit.library.model
+package br.com.redcode.easyreftrofit.library.model
 
 data class ErrorHandled(
     val message: String,

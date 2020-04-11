@@ -1,6 +1,6 @@
-package br.com.redcode.retrofit.library
+package br.com.redcode.easyreftrofit.library
 
-import br.com.redcode.retrofit.library.model.ErrorHandled
+import br.com.redcode.easyreftrofit.library.model.ErrorHandled
 import retrofit2.HttpException
 import java.io.IOException
 import java.net.SocketTimeoutException

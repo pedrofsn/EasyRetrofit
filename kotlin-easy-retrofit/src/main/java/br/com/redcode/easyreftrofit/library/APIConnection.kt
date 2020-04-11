@@ -1,4 +1,4 @@
-package br.com.redcode.retrofit.library
+package br.com.redcode.easyreftrofit.library
 
 import okhttp3.OkHttpClient
 import retrofit2.Converter

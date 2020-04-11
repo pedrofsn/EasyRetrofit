@@ -1,1 +1,2 @@
 include ':app', ':easy-retrofit'
+include ':kotlin-easy-retrofit'

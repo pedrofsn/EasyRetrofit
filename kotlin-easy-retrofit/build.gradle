@@ -1,0 +1,12 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api 'com.squareup.okhttp3:logging-interceptor:4.3.1'
+    api 'com.squareup.retrofit2:retrofit:2.7.2'
+}
+
+sourceCompatibility = "8"
+targetCompatibility = "8"

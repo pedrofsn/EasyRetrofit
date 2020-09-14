@@ -26,7 +26,6 @@ android {
             debuggable true
             minifyEnabled false
             shrinkResources false
-            useProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             buildConfigField "String", "API_BASE_URL", "\"https://dog.ceo/api/breeds/\""
             buildConfigField "Boolean", "SHOW_LOGS", 'true'
@@ -37,22 +36,22 @@ android {
 
 dependencies {
     // Kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation deps.kotlin.stdlib
 
     // Base Code
     implementation 'com.github.pedrofsn.base-redcode:mvvm:1.4.2'
 
     // UI
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation deps.ui.appcompat
 
     // Rest
     implementation project(':kotlin-easy-retrofit')
-    implementation 'com.squareup.retrofit2:converter-moshi:2.8.1'
+    implementation deps.network.moshi
 
     // Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.5'
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0'
+    implementation deps.coroutines.core
+    implementation deps.coroutines.android
 
     // Easy Validation
-    implementation 'com.github.pedrofsn:easyvalidation:1.0.2'
+    implementation 'com.github.pedrofsn:easyvalidation:1.0.4'
 }

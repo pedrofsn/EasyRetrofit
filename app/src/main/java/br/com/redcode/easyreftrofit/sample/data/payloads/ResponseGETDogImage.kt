@@ -1,7 +1,7 @@
 package br.com.redcode.easyreftrofit.sample.data.payloads
 
 import br.com.redcode.base.extensions.extract
-import br.com.redcode.base.interfaces.Payload
+import br.com.redcode.easyreftrofit.library.Payload
 import br.com.redcode.easyreftrofit.sample.data.model.DogImage
 
 /*

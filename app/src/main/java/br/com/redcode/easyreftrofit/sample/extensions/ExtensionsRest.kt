@@ -1,9 +1,9 @@
 package br.com.redcode.easyreftrofit.sample.extensions
 
 import br.com.redcode.base.extensions.extract
-import br.com.redcode.base.interfaces.Payload
 import br.com.redcode.base.rest.PayloadError
 import br.com.redcode.easyreftrofit.library.CallbackNetworkRequest
+import br.com.redcode.easyreftrofit.library.Payload
 import br.com.redcode.easyreftrofit.library.model.ErrorHandled
 import br.com.redcode.easyreftrofit.sample.rest.abstracts.BaseInteractor
 import br.com.redcode.easyreftrofit.sample.rest.abstracts.NetworkAndErrorHandler

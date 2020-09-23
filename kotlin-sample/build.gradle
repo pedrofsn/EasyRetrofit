@@ -2,7 +2,7 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.4.10'
 }
 
-group 'org.example'
+group 'com.github.pedrofsn'
 version '1.0-SNAPSHOT'
 
 repositories {
@@ -17,7 +17,7 @@ dependencies {
     implementation deps.network.retrofit
     implementation deps.network.moshi
     implementation deps.coroutines.core
-    api 'com.github.pedrofsn.EasyRetrofit:kotlin-easy-retrofit:1.2.0.0'
+    api 'com.github.pedrofsn.EasyRetrofit:kotlin-easy-retrofit:1.3.0'
 }
 
 compileKotlin {
